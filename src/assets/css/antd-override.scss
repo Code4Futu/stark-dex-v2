@@ -1,0 +1,70 @@
+.ant-row {
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+
+  .ant-col {
+    width: 100% !important;
+    .ant-form-item-required {
+      text-align: start !important;
+      font-size: 20px !important;
+      font-weight: 700 !important;
+      color: #fff !important;
+    }
+  }
+}
+
+.ant-form-item .ant-form-item-label {
+  text-align: start !important;
+  .ant-form-item-required {
+    color: #24c3bc !important;
+  }
+  > label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff !important;
+    font-family: "Roboto";
+  }
+}
+
+.ant-input-prefix,
+.ant-input-show-count-suffix {
+  color: #fff;
+}
+
+.ant-input {
+  background: transparent;
+}
+
+input,
+select,
+textarea {
+  color: #fff;
+}
+
+textarea:focus,
+input:focus {
+  border: rgb(59 130 246 / 0.5);
+  color: #fff;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
+}
+
+input::placeholder {
+  color: #fff !important;
+}
+
+.ant-select {
+  display: flex;
+  align-items: center;
+  margin-top: 0px !important;
+  .ant-select-selector {
+    height: 51px !important;
+  }
+}
+
+.ant-select-selector {
+  height: 51px !important;
+}
