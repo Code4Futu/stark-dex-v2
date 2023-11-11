@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { DrawerData } from "../drawer.index";
 import { useState } from "react";
-import route from "../../../routes/route";
+import route from "../../../../routes/route";
 import { IoIosArrowDown } from "react-icons/io";
 import {
   DocumentationIcon,
@@ -10,7 +9,12 @@ import {
   LaunchpadIcon,
   MarketIcon,
   SocialIcon,
-} from "../icons";
+  DiscordIcon,
+  GithubIcon,
+  MediumIcon,
+  TelegramIcon,
+  TwitterIcon,
+} from "../../icons";
 import { twMerge } from "tailwind-merge";
 
 export const DrawerItem = ({
@@ -21,6 +25,8 @@ export const DrawerItem = ({
   toggle,
   handleDrawerClick,
   resize,
+  href,
+  currentPath,
 }: {
   id: number;
   title: string;
@@ -29,6 +35,8 @@ export const DrawerItem = ({
   toggle: any;
   handleDrawerClick: any;
   resize: boolean;
+  href?: string;
+  currentPath?: any;
 }) => {
   const [hover, setHover] = useState(false);
 
@@ -42,22 +50,40 @@ export const DrawerItem = ({
     setHover(false);
   };
 
+  console.log(href, currentPath);
   const checkIcon = (id: number) => {
     switch (id) {
       case 1:
-        return <HomeIcon color={!hover ? "#C6C6C6" : ""} />;
+        return <HomeIcon color={hover ? "#ADFFFB" : ""} />;
       case 2:
-        return <ExchangeIcon color={!hover ? "#C6C6C6" : ""} />;
+        return <ExchangeIcon color={hover ? "#ADFFFB" : ""} />;
       case 3:
-        return <LaunchpadIcon color={!hover ? "#C6C6C6" : ""} />;
+        return <LaunchpadIcon color={hover ? "#ADFFFB" : ""} />;
       case 4:
-        return <MarketIcon color={!hover ? "#C6C6C6" : ""} />;
+        return <MarketIcon color={hover ? "#ADFFFB" : ""} />;
       case 5:
-        return <DocumentationIcon color={!hover ? "#C6C6C6" : ""} />;
+        return <DocumentationIcon color={hover ? "#ADFFFB" : ""} />;
       case 6:
-        return <SocialIcon color={!hover ? "#C6C6C6" : ""} />;
+        return <SocialIcon color={hover ? "#ADFFFB" : ""} />;
       default:
-        return <HomeIcon color={!hover ? "#C6C6C6" : ""} />;
+        return <HomeIcon color={hover ? "#ADFFFB" : ""} />;
+    }
+  };
+
+  const checkSocialIcon = (title: string) => {
+    switch (title) {
+      case "Telegram":
+        return <TelegramIcon color={!hover ? "#C6C6C6" : ""} />;
+      case "Discord":
+        return <DiscordIcon color={!hover ? "#C6C6C6" : ""} />;
+      case "X.com":
+        return <TwitterIcon color={!hover ? "#C6C6C6" : ""} />;
+      case "Medium":
+        return <MediumIcon color={!hover ? "#C6C6C6" : ""} />;
+      case "Github":
+        return <GithubIcon color={!hover ? "#C6C6C6" : ""} />;
+      default:
+        return <></>;
     }
   };
 
@@ -80,7 +106,7 @@ export const DrawerItem = ({
         <div className="flex items-center">
           <p
             className={twMerge(
-              "up ml-3 flex flex items-center gap-2 text-base font-bold text-[#C6C6C6]",
+              "up ml-3 flex items-center gap-2 text-base font-bold text-[#C6C6C6]",
               hover && "text-linear"
             )}
           >
@@ -96,18 +122,22 @@ export const DrawerItem = ({
           <></>
         )}
       </div>
-      {items.length > 0 && open && (
+      {items.length > 0 && open && !resize && (
         <div className={twMerge("mt-2 flex flex-col gap-2 overflow-hidden")}>
           {items.map((items: any, indexs: number) => (
             <div
-              className="animation-open-items flex h-10 cursor-pointer items-center justify-start rounded pl-16 pr-6 hover:bg-slate-500/30 hover:font-semibold"
+              key={indexs}
+              className="animation-open-items flex cursor-pointer items-center justify-start rounded p-3 hover:bg-slate-500/30 hover:font-semibold"
               style={{ ["--delay" as any]: indexs }}
               onClick={() => {
                 toggle();
                 navigation(items.path);
               }}
             >
-              <p className="text-lg text-white">{items.title}</p>
+              <div className="ml-3 flex gap-2">
+                {checkSocialIcon(items.title)}
+                <p className="text-lg text-white">{items.title}</p>
+              </div>
             </div>
           ))}
         </div>

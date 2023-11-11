@@ -4,8 +4,8 @@ import useModal from "./useModal";
 import icons from "../../assets/icons";
 import route from "../../routes/route";
 import { useNavigate } from "react-router-dom";
-import Logo from "../../pages/Logo";
-import MobileLogo from "../../pages/MobileLogo";
+import Logo from "../../components/Logo";
+import MobileLogo from "../../components/MobileLogo";
 const Header = (props: any) => {
   const { isShowing, toggle: toggleConnectWallet } = useModal();
   const navigation = useNavigate();

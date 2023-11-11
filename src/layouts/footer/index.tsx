@@ -2,7 +2,7 @@ import React from "react";
 import icons from "../../assets/icons";
 import { useNavigate } from "react-router-dom";
 import route from "../../routes/route";
-import Logo from "../../pages/Logo";
+import Logo from "../../components/Logo";
 const Footer = (props: any) => {
   const navigation = useNavigate();
   return (

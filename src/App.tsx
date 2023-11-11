@@ -42,6 +42,7 @@ function App() {
             toggle={toggle}
             resizeDrawer={resizeDrawer}
             resizeToggle={resizeToggle}
+            currentPath={currentPath}
           />
           <div
             className={twMerge(

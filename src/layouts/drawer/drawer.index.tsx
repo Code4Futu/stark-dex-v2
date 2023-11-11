@@ -1,81 +1,80 @@
-import { useState, useEffect } from "react";
-import clg from "../../utils/console";
-import { useNavigate } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
+import { useState } from "react";
 import route from "../../routes/route";
-import { Logo, LogoNoName } from "../../pages";
+import Logo from "../../components/Logo";
+import LogoNoName from "../../components/LogoNoName";
 import { DrawerItem, LeftIcon, RightIcon } from "./components";
 import { twMerge } from "tailwind-merge";
-import { useOpenDrawer } from "../../hooks/useOpenDrawer";
+import { DrawerItemMobile } from "./components/DrawerItemMobile/DrawerItemMobile";
 
 export const DrawerData = [
   {
     id: 1,
     title: "Home",
+    href: "/",
     open: false,
     items: [],
   },
   {
     id: 2,
-    title: "Create",
+    title: "Exchange",
     open: false,
     // action: () => {},
     items: [
       {
-        title: "Token",
-        path: route.createToken,
+        title: "Swap",
+        path: route.home,
       },
       {
-        title: "Presale",
-        path: route.createPresale,
+        title: "Liquidity",
+        path: route.home,
       },
       {
-        title: "Fairlaunch",
-        path: route.fairlaunch,
-      },
-      {
-        title: "Tiered Whitelist",
-        path: route.tieredWhitelist,
-      },
-      {
-        title: "Private Sale",
-        path: route.createPrivatesale,
+        title: "Overview",
+        path: route.home,
       },
     ],
   },
   {
     id: 3,
-    title: "Locker",
+    title: "Launchpad",
     open: false,
     // action: () => {},
     items: [
       {
-        title: "Create Lock",
-        path: route.createLock,
+        title: "Launchpad List",
+        path: route.home,
       },
       {
-        title: "Manage Lock",
-        path: route.manageLock,
+        title: "Airdrop List",
+        path: route.home,
       },
       {
-        title: "Lock Liquidity",
-        path: route.lockLiquidity,
+        title: "Your Pool",
+        path: route.home,
       },
     ],
   },
   {
     id: 4,
-    title: "Airdrop",
+    title: "Market",
     open: false,
     // action: () => {},
     items: [
       {
-        title: "Create Airdrop",
-        path: route.createAirdrop,
+        title: "Collections",
+        path: route.home,
       },
       {
-        title: "View Airdrop",
-        path: route.viewAirdrop,
+        title: "Activity",
+        path: route.home,
+      },
+      {
+        title: "Events",
+        path: route.home,
+      },
+      {
+        title: "Profile",
+        path: route.home,
       },
     ],
   },
@@ -87,14 +86,14 @@ export const DrawerData = [
   },
 ];
 
-const socialLink = {
+export const SocialLink = {
   discord: "https://discord.com/invite/starksport",
   tw: "https://twitter.com/starkfinance",
   teleChannel: "https://t.me/starksportchanel",
   teleGlobal: "https://t.me/starksportglobal",
 };
 
-const SocicalData = [
+export const SocialData = [
   {
     id: 6,
     title: "Socials",
@@ -102,23 +101,23 @@ const SocicalData = [
     items: [
       {
         title: "Telegram",
-        path: socialLink.teleGlobal,
+        path: SocialLink.teleGlobal,
       },
       {
         title: "Discord",
-        path: socialLink.discord,
+        path: SocialLink.discord,
       },
       {
         title: "X.com",
-        path: socialLink.tw,
+        path: SocialLink.tw,
       },
       {
         title: "Medium",
-        path: socialLink.teleChannel,
+        path: SocialLink.teleChannel,
       },
       {
         title: "Github",
-        path: socialLink.teleChannel,
+        path: SocialLink.teleChannel,
       },
     ],
   },
@@ -132,11 +131,15 @@ export default function Drawer(props: any) {
           resizeDrawer={props.resizeDrawer}
           resizeToggle={props.resizeToggle}
           toggle={props.toggle}
+          currentPath={props.currentPath}
         />
       </div>
       <div className="md:hidden">
-        alo
-        <DrawerMobile toggle={props.toggle} resizeDrawer={props.resizeDrawer} />
+        <DrawerMobile
+          toggle={props.toggle}
+          resizeDrawer={props.resizeDrawer}
+          currentPath={props.currentPath}
+        />
       </div>
     </>
   );
@@ -144,7 +147,7 @@ export default function Drawer(props: any) {
 
 const DrawerMobile = (props: any) => {
   const [drawerData, setDrawerData] = useState<any[]>(DrawerData);
-  const [socicalData, setSocicalData] = useState<any[]>(SocicalData);
+  const [socicalData, setSocicalData] = useState<any[]>(SocialData);
 
   const handleDrawerClick = (id: number) => {
     if (props.resizeDrawer) return;
@@ -173,44 +176,41 @@ const DrawerMobile = (props: any) => {
   };
 
   return (
-    <div className="border-t-0.5 fixed inset-x-0 bottom-0 z-50 flex h-20 w-full items-center justify-center border-[#2D313E] bg-[#1A1C24] p-12">
-      {/* <div className="flex flex-col gap-3">
-        {drawerData.map((item) => (
-          <DrawerItem
-            id={item.id}
-            title={item.title}
-            open={item.open}
-            toggle={props.toggle}
-            items={item.items}
-            handleDrawerClick={handleDrawerClick}
-            resize={props.resizeDrawer}
-          />
-        ))}
-      </div> */}
-      <div className="flex flex-col gap-12">
-        <div className="flex flex-col gap-3">
-          {socicalData.map((item) => (
-            <DrawerItem
-              id={item.id}
-              title={item.title}
-              open={item.open}
-              toggle={props.toggle}
-              items={item.items}
-              handleDrawerClick={handleSocialClick}
-              resize={props.resizeDrawer}
-            />
-          ))}
-        </div>
-      </div>
+    <div className="fixed inset-x-0 bottom-0 z-50 flex h-20 w-full items-center justify-between border-t-[1px] border-[#2D313E] bg-[#1A1C24] px-3 py-3 md:px-12">
+      {drawerData.map((item) => (
+        <DrawerItemMobile
+          id={item.id}
+          title={item.title}
+          open={item.open}
+          toggle={props.toggle}
+          items={item.items}
+          handleDrawerClick={handleDrawerClick}
+          resize={props.resizeDrawer}
+          href={item.href}
+          currentPath={props.currentPath}
+        />
+      ))}
+      {socicalData.map((item) => (
+        <DrawerItemMobile
+          key={item.id}
+          id={item.id}
+          title={item.title}
+          open={item.open}
+          toggle={props.toggle}
+          items={item.items}
+          handleDrawerClick={handleSocialClick}
+          resize={props.resizeDrawer}
+          href={item.href}
+          currentPath={props.currentPath}
+        />
+      ))}
     </div>
   );
 };
 
 const DrawerDesktop = (props: any) => {
-  const navigation = useNavigate();
-
   const [drawerData, setDrawerData] = useState<any[]>(DrawerData);
-  const [socicalData, setSocicalData] = useState<any[]>(SocicalData);
+  const [socicalData, setSocicalData] = useState<any[]>(SocialData);
 
   const handleDrawerClick = (id: number) => {
     if (props.resizeDrawer) return;
@@ -242,13 +242,6 @@ const DrawerDesktop = (props: any) => {
     const win = window.open(url, "_blank");
     win!.focus();
   };
-
-  // useEffect(() => {
-  //   clg(props.openDrawer);
-  //   if (!isMobile) setFirstOpen(true);
-  //   if (firstOpen && props.openDrawer) setFirstOpen(false);
-  // }, [props.openDrawer, isMobile]);
-
   return (
     <div
       className={twMerge(
@@ -263,6 +256,7 @@ const DrawerDesktop = (props: any) => {
         <div className="flex flex-col gap-3">
           {drawerData.map((item) => (
             <DrawerItem
+              key={item.id}
               id={item.id}
               title={item.title}
               open={item.open}
@@ -270,6 +264,8 @@ const DrawerDesktop = (props: any) => {
               items={item.items}
               handleDrawerClick={handleDrawerClick}
               resize={props.resizeDrawer}
+              href={item.href}
+              currentPath={props.currentPath}
             />
           ))}
         </div>
@@ -278,6 +274,7 @@ const DrawerDesktop = (props: any) => {
         <div className="flex flex-col gap-3">
           {socicalData.map((item) => (
             <DrawerItem
+              key={item.id}
               id={item.id}
               title={item.title}
               open={item.open}
@@ -285,6 +282,8 @@ const DrawerDesktop = (props: any) => {
               items={item.items}
               handleDrawerClick={handleSocialClick}
               resize={props.resizeDrawer}
+              href={item.href}
+              currentPath={props.currentPath}
             />
           ))}
         </div>

@@ -1,10 +1,3 @@
-/** Fan Token Logo */
-import logo1 from "./demo_logo_token_1.jpg";
-import logo2 from "./demo_logo_token_2.jpeg";
-import logo3 from "./demo_logo_token_3.jpeg";
-import logo4 from "./demo_logo_token_4.jpeg";
-import logo5 from "./demo_logo_token_5.jpeg";
-
 import wallet_argentx_logo from "./argent.png";
 import wallet_braavos_logo from "./braavos.jpg";
 import card_background from "./card_background.jpg";
@@ -76,29 +69,6 @@ import ECOSYSTEM_MOBILE from "./ecosystem_mobile.png";
 import ECOSYSTEM_MD from "./ecosystem_md.png";
 import ECOSYSTEM_DESKTOP from "./ecosystem_desktop.png";
 
-// Roadmap
-import ECOSYSTEM_1 from "./svg/ecosystem/Ecosystem_1.svg";
-import ECOSYSTEM_2 from "./svg/ecosystem/Ecosystem_2.svg";
-import ECOSYSTEM_3 from "./svg/ecosystem/Ecosystem_3.svg";
-import ECOSYSTEM_4 from "./svg/ecosystem/Ecosystem_4.svg";
-import ECOSYSTEM_5 from "./svg/ecosystem/Ecosystem_5.svg";
-import ECOSYSTEM_6 from "./svg/ecosystem/Ecosystem_6.svg";
-import ECOSYSTEM_7 from "./svg/ecosystem/Ecosystem_7.svg";
-
-// Partners
-import HASHSTACK from "./partners/hashstack.png";
-import GALXE from "./partners/galxe.png";
-import SITHSWAP from "./partners/sithswap.png";
-import TRANTOR from "./partners/trantor.png";
-import CARMINE from "./partners/carmine.png";
-import MISES from "./partners/mises.png";
-import LINKE from "./partners/linke.png";
-import METABIT from "./partners/metabit.png";
-import TASKON from "./partners/taskon.png";
-import ZETACHAIN from "./partners/zetachain.png";
-import OPSIDE from "./partners/opside.png";
-import LAYERSWAP from "./partners/layerswap.png";
-
 // V2 Launchpad
 import bg_offical from "../icons/svg/v2/background_launchpad.svg";
 import starknet_logo from "./starknet_logo.png";
@@ -109,13 +79,6 @@ const icons = {
     wallet_argentx_logo,
     wallet_braavos_logo,
     wallet_okx_logo,
-  },
-  demo: {
-    logo1,
-    logo2,
-    logo3,
-    logo4,
-    logo5,
   },
   ic_close,
   offical_logo,
@@ -181,29 +144,6 @@ const icons = {
   ECOSYSTEM_MOBILE,
   ECOSYSTEM_MD,
   ECOSYSTEM_DESKTOP,
-  ecosystem: {
-    ECOSYSTEM_1,
-    ECOSYSTEM_2,
-    ECOSYSTEM_3,
-    ECOSYSTEM_4,
-    ECOSYSTEM_5,
-    ECOSYSTEM_6,
-    ECOSYSTEM_7,
-  },
-  partners: {
-    HASHSTACK,
-    GALXE,
-    SITHSWAP,
-    TRANTOR,
-    CARMINE,
-    MISES,
-    LINKE,
-    METABIT,
-    TASKON,
-    ZETACHAIN,
-    OPSIDE,
-    LAYERSWAP,
-  },
   v2: {
     bg_offical,
     starknet_logo,

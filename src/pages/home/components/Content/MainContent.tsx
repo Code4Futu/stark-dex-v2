@@ -2,10 +2,10 @@ import About from "./components/About";
 import Audit from "./components/Audit";
 import Backed from "./components/Backed";
 import Introduction from "./components/BannerContent";
-import Ecosystem from "./components/Ecosystem";
+// import Ecosystem from "./components/Ecosystem";
 import Feature from "./components/Feature";
 import OurRoadmap from "./components/OurRoadmap";
-import PartnerShip from "./components/PartnerShip";
+// import PartnerShip from "./components/PartnerShip";
 import { useOpenDrawer } from "../../../../hooks/useOpenDrawer";
 import { twMerge } from "tailwind-merge";
 
@@ -18,10 +18,10 @@ export default function MainContentHomepage() {
         <About />
         <Feature />
         <Audit />
-        <Ecosystem />
+        {/* <Ecosystem /> */}
         <OurRoadmap />
         <Backed />
-        <PartnerShip />
+        {/* <PartnerShip /> */}
       </div>
     </div>
   );

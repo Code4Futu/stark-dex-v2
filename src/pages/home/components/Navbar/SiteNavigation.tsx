@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import route from "../../../../routes/route";
 import LaunchAppButton from "./components/LaunchAppButton";
 import NetworkButton from "./components/NetworkButton";
-import { LogoNoName } from "../../..";
+import LogoNoName from "../../../../components/LogoNoName";
 
 export default function SiteNavigation() {
   return (
@@ -27,7 +27,7 @@ const MobileSiteNavigation = () => {
       </div>
       <div className="flex items-center gap-3">
         <NetworkButton />
-        <LaunchAppButton onClick={() => navigation(route.viewLaunchpad)} />
+        <LaunchAppButton onClick={() => navigation(route.home)} />
       </div>
     </div>
   );
@@ -44,7 +44,7 @@ const DesktopSiteNavigation = () => {
       <div className="flex items-center gap-6">
         <NetworkButton />
         <LaunchAppButton
-          onClick={() => navigation(route.viewLaunchpad)}
+          onClick={() => navigation(route.home)}
           styleButton="py-3 px-6 rounded-2xl h-12"
         />
       </div>

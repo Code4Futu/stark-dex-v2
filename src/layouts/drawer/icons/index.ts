@@ -4,3 +4,8 @@ export * from "./LaunchpadIcon";
 export * from "./MarketIcon";
 export * from "./DocumentationIcon";
 export * from "./SocialIcon";
+export * from "./DiscordIcon";
+export * from "./GithubIcon";
+export * from "./MeidumIcon";
+export * from "./TelegramIcon";
+export * from "./TwitterIcon";
