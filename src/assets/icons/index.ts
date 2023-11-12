@@ -46,10 +46,6 @@ import startsportLogo from "./Starksport@3x.png";
 import bannerHomepageMobile from "./BannerHompage.png";
 import aboutHomepageBanner from "./AboutHomepage.png";
 import featureCard from "./svg/FeatureCard.svg";
-import kyc1 from "./1_audit.png";
-import kyc2 from "./1_sale.png";
-import kyc3 from "./1_airdrop.png";
-import kyc4 from "./1_lock.png";
 import audit1 from "./svg/audit_1.svg";
 import audit2 from "./svg/audit_2.svg";
 import telegramFooter from "./svg/footer/telegram.svg";
@@ -65,13 +61,12 @@ import BG_OFFICIAL from "./svg/background_offical.svg";
 import CERTIK_LOGO from "./svg/certik_logo.svg";
 import STARKGUARDIAN_LOGO from "./svg/starkguardian_logo.svg";
 import ECLIP_SHADOW from "./svg/eclipse_shadow.svg";
-import ECOSYSTEM_MOBILE from "./ecosystem_mobile.png";
-import ECOSYSTEM_MD from "./ecosystem_md.png";
-import ECOSYSTEM_DESKTOP from "./ecosystem_desktop.png";
 
 // V2 Launchpad
 import bg_offical from "../icons/svg/v2/background_launchpad.svg";
 import starknet_logo from "./starknet_logo.png";
+import about_banner_v2 from "./svg/v2/about_banner_mobile.svg";
+import logo_noname from "./svg/v2/starksport_logo_v2_noname.svg";
 
 const icons = {
   images: {
@@ -124,10 +119,6 @@ const icons = {
     bannerHomepageMobile,
     aboutHomepageBanner,
     featureCard,
-    kyc1,
-    kyc2,
-    kyc3,
-    kyc4,
     audit1,
     audit2,
     telegramFooter,
@@ -141,12 +132,11 @@ const icons = {
   CERTIK_LOGO,
   STARKGUARDIAN_LOGO,
   ECLIP_SHADOW,
-  ECOSYSTEM_MOBILE,
-  ECOSYSTEM_MD,
-  ECOSYSTEM_DESKTOP,
   v2: {
     bg_offical,
     starknet_logo,
+    about_banner_v2,
+    logo_noname,
   },
 };
 

@@ -38,6 +38,7 @@ export const DrawerItem = ({
   href?: string;
   currentPath?: any;
 }) => {
+  console.log(items.path);
   const [hover, setHover] = useState(false);
 
   const navigation = useNavigate();
@@ -50,7 +51,6 @@ export const DrawerItem = ({
     setHover(false);
   };
 
-  console.log(href, currentPath);
   const checkIcon = (id: number) => {
     switch (id) {
       case 1:

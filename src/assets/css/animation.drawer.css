@@ -1,42 +1,41 @@
 .animation-open-items {
-    animation: open-items .7s calc(60ms * var(--delay)) ease-out both;
+  animation: open-items 0.7s calc(60ms * var(--delay)) ease-out both;
 }
 
 @keyframes open-items {
-    from {
-        transform: translateX(100%);
-    }
+  from {
+    transform: translateX(100%);
+  }
 
-    to{
-        transform: translateX(0);
-    }
-    
+  to {
+    transform: translateX(0);
+  }
 }
 
 .anim-drawer-show {
-    animation:show-drawer .7s ease-out both;
+  animation: show-drawer 0.7s ease-out both;
 }
 
 .anim-drawer-hidden {
-    animation:hidden-drawer .7s ease-out both;
+  animation: hidden-drawer 0.7s ease-out both;
 }
 
 @keyframes show-drawer {
-    from {
-        transform: translateX(-100%);
-    }
+  from {
+    transform: translateX(-100%);
+  }
 
-    to{
-        transform: translateX(0);
-    } 
+  to {
+    transform: translateX(0);
+  }
 }
 
 @keyframes hidden-drawer {
-    from {
-        transform: translateX(0%);
-    }
+  from {
+    transform: translateX(0%);
+  }
 
-    to{
-        transform: translateX(-100%);
-    } 
+  to {
+    transform: translateX(-100%);
+  }
 }

@@ -22,33 +22,3 @@ export function AboutUsBanner({ className }: { className?: string }) {
     />
   );
 }
-
-export function EcosystemBanner({ className }: { className?: string }) {
-  return (
-    <img
-      src={icons.ECOSYSTEM_MOBILE}
-      alt="banner"
-      className={twMerge("h-auto", className)}
-    />
-  );
-}
-
-export function EcosystemBannerMd({ className }: { className?: string }) {
-  return (
-    <img
-      src={icons.ECOSYSTEM_MD}
-      alt="banner"
-      className={twMerge("h-auto", className)}
-    />
-  );
-}
-
-export function EcosystemBannerDesktop({ className }: { className?: string }) {
-  return (
-    <img
-      src={icons.ECOSYSTEM_DESKTOP}
-      alt="banner"
-      className={twMerge("h-auto", className)}
-    />
-  );
-}

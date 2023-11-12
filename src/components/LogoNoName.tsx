@@ -12,9 +12,9 @@ export default function LogoNoName({ className }: { className?: string }) {
       className={twMerge("relative flex", className)}
     >
       <img
-        src={icons.official_logo_no_name}
+        src={icons.v2.logo_noname}
         alt="Startsport logo"
-        style={{ maxWidth: "100%", height: "auto" }}
+        style={{ maxWidth: "48px", height: "auto" }}
       />
     </div>
   );

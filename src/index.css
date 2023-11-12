@@ -123,3 +123,32 @@ input[type="number"] {
   width: 288px;
   transition: width 0.3s;
 }
+
+.button-linear {
+  background: linear-gradient(
+      0deg,
+      rgba(97, 179, 255, 0.15) 0%,
+      rgba(97, 179, 255, 0.15) 100%
+    ),
+    #0d0e12;
+}
+
+.button-linear-1 {
+  background: var(--p-gc1, linear-gradient(135deg, #24c3bc 0%, #adfffb 100%));
+}
+
+.button-linear-1:hover {
+  box-shadow: 0px 0px 25px 0px #24c3bc;
+}
+
+.button-linear-2 {
+  background: #f1f1f1;
+}
+
+.button-linear-2:hover {
+  box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.5);
+}
+
+.button-hover-effect:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

@@ -5,8 +5,10 @@ import { MouseEventHandler } from "react";
 export default function LaunchAppButton({
   styleButton,
   styleTitle,
+  title,
   onClick,
 }: {
+  title: string;
   styleButton?: string;
   styleTitle?: string;
   onClick?: MouseEventHandler;
@@ -31,7 +33,7 @@ export default function LaunchAppButton({
           styleTitle
         )}
       >
-        Go to Launchpad Now
+        {title}
       </span>
     </Button>
   );

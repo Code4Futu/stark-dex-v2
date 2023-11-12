@@ -8,9 +8,7 @@ import {
   LaunchpadIcon,
   MarketIcon,
   SocialIcon,
-  TelegramIcon,
 } from "../../icons";
-import { twMerge } from "tailwind-merge";
 
 export const DrawerItemMobile = ({
   id,
@@ -73,7 +71,8 @@ export const DrawerItemMobile = ({
         if (id === 1) {
           navigation(route.home);
         }
-        handleDrawerClick(id);
+        // handleDrawerClick(id);
+        toggle(id);
       }}
     >
       <div className="flex items-center gap-2">{checkIcon(id)}</div>

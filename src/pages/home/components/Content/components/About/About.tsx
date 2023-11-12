@@ -1,6 +1,10 @@
-import icons from "../../../../../assets/icons";
-import { AboutUsBanner } from "./Banner";
-import { HeaderComponent } from "./HeaderComponent";
+import { AboutUsBanner } from "../Banner";
+import { HeaderComponent } from "../HeaderComponent";
+import { Wrapper } from "../../../../../../components/layouts";
+import icons from "../../../../../../assets/icons";
+import { Promote } from "./components/Promote";
+import { TableInfo } from "./components/TableInfo";
+import LaunchAppButton from "../../../../../../components/buttons/LaunchAppButton";
 
 export default function About() {
   return (
@@ -38,25 +42,35 @@ const AboutUsDesktop = () => {
 
 const AboutUsMobile = () => {
   return (
-    <div className="about-linear-background flex flex-col gap-10 md:mx-[60px] md:max-w-[648px] md:rounded-3xl md:border-[0.5px] md:border-[#C6C6C6] md:px-6 md:py-10 min-[1440px]:mx-[98px] min-[1440px]:max-w-none min-[1440px]:flex-row min-[1440px]:gap-[95px]">
-      <div className="flex flex-col items-center gap-5 min-[1440px]:max-w-[540px] min-[1440px]:items-start min-[1440px]:gap-6">
-        <div className="flex flex-col gap-10">
-          <div className="flex flex-col gap-20">
-            <HeaderComponent
-              title="WHAT IS STARKSPORT"
-              subTitle="The Best Launchpad"
-            />
-            <div className="flex justify-center px-3 md:px-0">
-              <AboutUsBanner className="w-[342px] md:w-[460px]" />
+    <Wrapper>
+      <div className="flex w-full flex-col gap-6">
+        <div className="text-[32px] font-bold text-[#F1F1F1]">
+          Welcome to Starksport Launchpad
+        </div>
+        <div className="flex flex-col items-start justify-center gap-6 rounded-3xl border-2 border-[#24C3BC] bg-[#1A1C24] p-3 pb-6">
+          <div
+            className="h-[159px] self-stretch rounded-2xl border-[1px] border-[#2D313E]"
+            style={{
+              backgroundImage: `url(${icons.v2.about_banner_v2})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <div className="flex h-full w-full items-start gap-2.5 p-3">
+              <div className="flex flex-col items-start rounded-xl border-2 border-[#2D313E] bg-[#0D0E12] p-3 text-[#F1F1F1]">
+                <span className="text-2xl font-bold">09</span>
+                <span className="text-sm font-normal">OCT</span>
+              </div>
             </div>
           </div>
-          <AboutUsContent />
-        </div>
-        <div className="w-full px-6 md:w-[200px]">
-          <AboutUsButton />
+          <div className="flex flex-col items-start justify-center gap-6 self-stretch">
+            <Promote />
+            <TableInfo />
+            <LaunchAppButton title="Go to Launchpad Now" />
+          </div>
         </div>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

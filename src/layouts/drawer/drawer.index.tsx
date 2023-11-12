@@ -22,7 +22,7 @@ export const DrawerData = [
     items: [
       {
         title: "Swap",
-        path: route.home,
+        path: route.swap,
       },
       {
         title: "Liquidity",

@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import { twMerge } from "tailwind-merge";
 import { MouseEventHandler } from "react";
-
+import { WalletIcon } from ".";
 export default function LaunchAppButton({
   styleButton,
   styleTitle,
@@ -17,21 +17,18 @@ export default function LaunchAppButton({
         background: "linear-gradient(135deg, #24C3BC 0%, #ADFFFB 100%)",
       }}
       className={twMerge(
-        "button-hover-1 flex h-[43px] items-center justify-center gap-1 self-stretch rounded-xl border-0 px-6 py-3",
+        "button-hover-1 flex h-[43px] items-center justify-center gap-1 rounded-xl border-0 p-3 max-[340px]:hidden",
         styleButton
       )}
       onClick={onClick}
     >
-      {/* <div className="hidden md:flex">
+      <div className="hidden md:flex">
         <WalletIcon />
-      </div> */}
+      </div>
       <span
-        className={twMerge(
-          "text-base font-bold leading-normal text-[#1A1C24]",
-          styleTitle
-        )}
+        className={twMerge("text-base font-bold text-[#1A1C24]", styleTitle)}
       >
-        Go to Launchpad Now
+        Connect Wallet
       </span>
     </Button>
   );

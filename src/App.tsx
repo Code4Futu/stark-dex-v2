@@ -1,16 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { publicRoutesMobile } from "./routes";
-import { Drawer, Header } from "./layouts";
+import { Drawer, Navbar } from "./layouts";
 import { useOpenDrawer } from "./hooks/useOpenDrawer";
 import { useLocationPath } from "./hooks/useLocationPath";
 import { InjectedConnector, StarknetConfig } from "@starknet-react/core";
-import SiteNavigation from "./pages/home/components/Navbar/SiteNavigation";
-import icons from "./assets/icons";
 import { twMerge } from "tailwind-merge";
 import { useMobile } from "./hooks/useMobile";
+import icons from "./assets/icons";
 
 function App() {
-  const { openDrawer, toggle, resizeDrawer, resizeToggle } = useOpenDrawer();
+  const {
+    openDrawer,
+    toggle,
+    resizeDrawer,
+    resizeToggle,
+    content,
+    changeContent,
+  } = useOpenDrawer();
   const { isMobile } = useMobile();
 
   const connectors = [
@@ -31,7 +37,11 @@ function App() {
         }}
         className="relative overflow-y-hidden"
       >
-        {currentPath !== "/" ? <Header toggle={toggle} /> : <SiteNavigation />}
+        <Navbar
+          openDrawer={openDrawer}
+          resizeDrawer={resizeDrawer}
+          content={content}
+        />
         <div
           className={
             currentPath !== "/" ? `flex bg-transparent md:mt-[169px]` : ""
@@ -39,14 +49,14 @@ function App() {
         >
           <Drawer
             openDrawer={openDrawer}
-            toggle={toggle}
+            toggle={changeContent}
             resizeDrawer={resizeDrawer}
             resizeToggle={resizeToggle}
             currentPath={currentPath}
           />
           <div
             className={twMerge(
-              "mt-[104px] min-h-screen md:mt-[98px]",
+              "mt-[104px] min-h-screen w-full md:mt-[98px]",
               resizeDrawer ? "md:pl-[104px]" : "md:pl-[288px]"
             )}
           >
