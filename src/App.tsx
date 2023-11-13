@@ -57,7 +57,8 @@ function App() {
           <div
             className={twMerge(
               "mt-[104px] min-h-screen w-full md:mt-[98px]",
-              resizeDrawer ? "md:pl-[104px]" : "md:pl-[288px]"
+              resizeDrawer ? "md:pl-[104px]" : "md:pl-[288px]",
+              currentPath !== "/" && "mt-[134px]"
             )}
           >
             <Routes>

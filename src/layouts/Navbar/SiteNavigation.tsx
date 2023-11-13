@@ -5,8 +5,11 @@ import NetworkButton from "./components/NetworkButton";
 import LogoNoName from "../../components/LogoNoName";
 import { twMerge } from "tailwind-merge";
 import { Divider } from "../../components/Divider";
+import { useLocationPath } from "../../hooks/useLocationPath";
+import { BreadCrumb } from "../../components/breadcrumb";
 
 export default function SiteNavigation(props: any) {
+  const currentPath = useLocationPath();
   return (
     <>
       <div className="hidden md:block">
@@ -17,7 +20,7 @@ export default function SiteNavigation(props: any) {
           openDrawer={props.openDrawer}
           content={props.content}
         />
-        <MobileBreadScrums />
+        {currentPath === "/swap" && <MobileBreadScrums />}
       </div>
     </>
   );
@@ -26,7 +29,7 @@ export default function SiteNavigation(props: any) {
 const MobileBreadScrums = () => {
   return (
     <div className="fixed top-[96px] h-[48px] w-screen border-b-[1px] border-[#2D313E] bg-[#0D0E12] px-6 py-3 text-white">
-      Bread Scrums
+      <BreadCrumb />
     </div>
   );
 };

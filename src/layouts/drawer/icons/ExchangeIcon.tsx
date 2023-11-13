@@ -1,9 +1,17 @@
-export const ExchangeIcon = ({ color }: { color?: string }) => {
+export const ExchangeIcon = ({
+  color,
+  width,
+  height,
+}: {
+  color?: string;
+  width?: string;
+  height?: string;
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
+      width={width ? width : "30"}
+      height={height ? height : "30"}
       viewBox="0 0 30 30"
       fill="none"
     >
