@@ -67,6 +67,8 @@ import bg_offical from "../icons/svg/v2/background_launchpad.svg";
 import starknet_logo from "./starknet_logo.png";
 import about_banner_v2 from "./svg/v2/about_banner_mobile.svg";
 import logo_noname from "./svg/v2/starksport_logo_v2_noname.svg";
+import eth_logo from "./svg/v2/eth_logo.svg";
+import tether_logo from "./svg/v2/tether.svg";
 
 const icons = {
   images: {
@@ -137,6 +139,8 @@ const icons = {
     starknet_logo,
     about_banner_v2,
     logo_noname,
+    eth_logo,
+    tether_logo,
   },
 };
 

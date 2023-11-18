@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 const useModalChart = () => {
-  const [isShowChart, setIsShowChart] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   function toggleModalChart() {
-    setIsShowChart(!isShowChart);
+    setIsModalOpen(!isModalOpen);
   }
 
   return {
-    isShowChart,
+    isModalOpen,
     toggleModalChart,
   };
 };

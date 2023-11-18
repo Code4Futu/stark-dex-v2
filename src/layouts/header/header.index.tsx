@@ -24,7 +24,7 @@ const Header = (props: any) => {
   };
   return (
     <>
-      <div className="bg-transparents px-auto fixed top-0 z-[9999] mx-auto flex h-[80px] w-screen items-center justify-between px-6 backdrop-blur md:mx-0 md:h-[120px] md:px-[85px]">
+      <div className="bg-transparents px-auto fixed top-0 z-[9999] mx-auto flex h-[80px] w-screen items-center justify-between px-6 backdrop-blur xl:mx-0 xl:h-[120px] xl:px-[85px]">
         <ModalWallet isShowing={isShowing} hide={toggleConnectWallet} />
 
         <div className="max-[500px]:hidden">
@@ -75,14 +75,14 @@ const Header = (props: any) => {
             </p>
           </button>
           <div
-            className="block h-10 w-10 rounded focus:bg-slate-100 md:hidden"
+            className="block h-10 w-10 rounded focus:bg-slate-100 xl:hidden"
             onClick={() => props.toggle()}
           >
             <BiMenuAltRight style={{ fontSize: 44, color: "white" }} />
           </div>
         </div>
       </div>
-      <div className="fixed top-[80px] z-[9999] flex h-[49px] w-full items-center justify-center bg-[#1A1F2F] md:top-[120px]">
+      <div className="fixed top-[80px] z-[9999] flex h-[49px] w-full items-center justify-center bg-[#1A1F2F] xl:top-[120px]">
         <div className="marquee">
           <div className="track">
             <div className="flex gap-6">

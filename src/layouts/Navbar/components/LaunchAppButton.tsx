@@ -22,7 +22,7 @@ export default function LaunchAppButton({
       )}
       onClick={onClick}
     >
-      <div className="hidden md:flex">
+      <div className="hidden xl:flex">
         <WalletIcon />
       </div>
       <span

@@ -24,9 +24,6 @@ export default function LaunchAppButton({
       )}
       onClick={onClick}
     >
-      {/* <div className="hidden md:flex">
-        <WalletIcon />
-      </div> */}
       <span
         className={twMerge(
           "text-base font-bold leading-normal text-[#1A1C24]",

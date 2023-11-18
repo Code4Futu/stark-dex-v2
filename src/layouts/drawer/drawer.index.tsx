@@ -126,7 +126,7 @@ export const SocialData = [
 export default function Drawer(props: any) {
   return (
     <>
-      <div className="hidden md:block">
+      <div className="hidden xl:block">
         <DrawerDesktop
           resizeDrawer={props.resizeDrawer}
           resizeToggle={props.resizeToggle}
@@ -134,7 +134,7 @@ export default function Drawer(props: any) {
           currentPath={props.currentPath}
         />
       </div>
-      <div className="md:hidden">
+      <div className="xl:hidden">
         <DrawerMobile
           toggle={props.toggle}
           resizeDrawer={props.resizeDrawer}
@@ -176,7 +176,7 @@ const DrawerMobile = (props: any) => {
   };
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 flex h-20 w-full items-center justify-between border-t-[1px] border-[#2D313E] bg-[#1A1C24] px-3 py-3 md:px-12">
+    <div className="fixed inset-x-0 bottom-0 z-50 flex h-20 w-full items-center justify-between border-t-[1px] border-[#2D313E] bg-[#1A1C24] px-3 py-3 xl:px-12">
       {drawerData.map((item) => (
         <DrawerItemMobile
           id={item.id}
@@ -245,7 +245,7 @@ const DrawerDesktop = (props: any) => {
   return (
     <div
       className={twMerge(
-        `drawer-container fixed bottom-0 left-0 z-50 flex min-h-screen translate-x-[-100%] flex-col justify-between border-r-[1px] border-[#2D313E] bg-[#1A1C24] p-6 md:translate-x-0`,
+        `drawer-container fixed bottom-0 left-0 z-50 flex min-h-screen translate-x-[-100%] flex-col justify-between border-r-[1px] border-[#2D313E] bg-[#1A1C24] p-6 xl:translate-x-0`,
         props.resizeDrawer ? "!w-[104px]" : "!w-[288px]"
       )}
     >

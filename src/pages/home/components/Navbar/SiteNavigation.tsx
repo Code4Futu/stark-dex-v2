@@ -39,7 +39,7 @@ const DesktopSiteNavigation = () => {
   return (
     <div
       style={{ boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)" }}
-      className="fixed top-0 z-[40] flex h-[96px] w-screen justify-end border-b-[1px] border-[#1A1C24] bg-[#1A1C24] px-8 py-6"
+      className="fixed top-0 z-[40] flex h-[96px] w-screen justify-end border-b-[1px] border-[#1A1C24] bg-[#1A1C24] px-8 py-6 pl-[]"
     >
       <div className="flex items-center gap-6">
         <NetworkButton />

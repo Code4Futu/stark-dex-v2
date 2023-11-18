@@ -12,10 +12,10 @@ export default function SiteNavigation(props: any) {
   const currentPath = useLocationPath();
   return (
     <>
-      <div className="hidden md:block">
+      <div className="hidden xl:block">
         <DesktopSiteNavigation resizeDrawer={props.resizeDrawer} />
       </div>
-      <div className="md:hidden">
+      <div className="xl:hidden">
         <MobileSiteNavigation
           openDrawer={props.openDrawer}
           content={props.content}

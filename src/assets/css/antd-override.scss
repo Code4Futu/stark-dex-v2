@@ -92,3 +92,27 @@ input::placeholder {
   align-items: center;
   color: #c6c6c6 !important;
 }
+
+.ant-pagination-prev {
+  background-color: #232631;
+}
+
+.ant-pagination-next {
+  background-color: #232631;
+}
+
+.ant-pagination-item-active {
+  border-radius: 10px !important;
+}
+
+.ant-pagination-item-active a {
+  color: #1a1c24 !important;
+}
+
+.ant-pagination-item-ellipsis {
+  color: #fff !important;
+}
+
+.ant-pagination-options {
+  display: none !important;
+}

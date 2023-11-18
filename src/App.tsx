@@ -44,7 +44,7 @@ function App() {
         />
         <div
           className={
-            currentPath !== "/" ? `flex bg-transparent md:mt-[169px]` : ""
+            currentPath !== "/" ? `flex bg-transparent xl:mt-[169px]` : ""
           }
         >
           <Drawer
@@ -56,8 +56,10 @@ function App() {
           />
           <div
             className={twMerge(
-              "mt-[104px] min-h-screen w-full md:mt-[98px]",
-              resizeDrawer ? "md:pl-[104px]" : "md:pl-[288px]",
+              "mt-[104px] min-h-screen w-full min-[1920px]:mt-[98px]",
+              resizeDrawer
+                ? "min-[1920px]:pl-[104px]"
+                : "min-[1920px]:pl-[288px]",
               currentPath !== "/" && "mt-[134px]"
             )}
           >
