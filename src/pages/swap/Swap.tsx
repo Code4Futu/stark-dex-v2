@@ -10,11 +10,19 @@ import { Divider } from "../../components/Divider";
 import { SwitchButton } from "./components/SwitchButton";
 import Input from "antd/es/input/Input";
 import icons from "../../assets/icons";
+import ChartModal from "../../components/chart-modal/ModalChart";
+import useModalChart from "../../components/chart-modal/useModalChart";
 
 export const Swap = () => {
   const [tab, setTab] = useState("swap");
   // Token 0 Input Amount
   const [token0InputAmount, setToken0InputAmount] = useState(0);
+
+  const { isShowChart, toggleModalChart } = useModalChart();
+
+  const openModalSetting = () => {
+    toggleModalChart();
+  };
 
   const inputToken0Ref = useRef(null);
 
@@ -41,7 +49,10 @@ export const Swap = () => {
       <div className="flex flex-col items-end justify-center gap-3 rounded-3xl bg-[#1A1C24] p-6">
         <SwitchButton tab={tab} setTab={setTab} />
         <Divider className="mt-3 bg-[#2D313E]" />
-        <div className="inline-flex items-center justify-end gap-1 rounded-xl bg-[#2D313E] py-[2px] pl-3 pr-2">
+        <div
+          onClick={toggleModalChart}
+          className="inline-flex items-center justify-end gap-1 rounded-xl bg-[#2D313E] py-[2px] pl-3 pr-2"
+        >
           <span className="text-xs font-medium text-[#C6C6C6]">
             Transaction Settings
           </span>
@@ -133,6 +144,7 @@ export const Swap = () => {
           </div>
         </div>
       </div>
+      <ChartModal isShowing={isShowChart} hide={toggleModalChart} />
     </div>
   );
 };
