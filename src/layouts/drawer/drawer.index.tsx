@@ -126,7 +126,7 @@ export const SocialData = [
 export default function Drawer(props: any) {
   return (
     <>
-      <div className="hidden xl:block">
+      <div className="hidden min-[1920px]:block">
         <DrawerDesktop
           resizeDrawer={props.resizeDrawer}
           resizeToggle={props.resizeToggle}
@@ -134,7 +134,7 @@ export default function Drawer(props: any) {
           currentPath={props.currentPath}
         />
       </div>
-      <div className="xl:hidden">
+      <div className="min-[1920px]:hidden">
         <DrawerMobile
           toggle={props.toggle}
           resizeDrawer={props.resizeDrawer}
@@ -150,6 +150,7 @@ const DrawerMobile = (props: any) => {
   const [socicalData, setSocicalData] = useState<any[]>(SocialData);
 
   const handleDrawerClick = (id: number) => {
+    console.log(id);
     if (props.resizeDrawer) return;
     const tempDrawerData = drawerData.map((item) => {
       if (item.id == id) {
@@ -179,6 +180,7 @@ const DrawerMobile = (props: any) => {
     <div className="fixed inset-x-0 bottom-0 z-50 flex h-20 w-full items-center justify-between border-t-[1px] border-[#2D313E] bg-[#1A1C24] px-3 py-3 xl:px-12">
       {drawerData.map((item) => (
         <DrawerItemMobile
+          key={item.id}
           id={item.id}
           title={item.title}
           open={item.open}

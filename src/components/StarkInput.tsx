@@ -4,7 +4,6 @@ import classNames from "classnames";
 export const DonaInput = (
   props: InputProps & { ref?: React.Ref<InputRef> }
 ) => {
-  console.log(props.className);
   return (
     <Input
       ref={props.ref}

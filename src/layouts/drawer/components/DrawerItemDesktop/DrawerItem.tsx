@@ -38,7 +38,6 @@ export const DrawerItem = ({
   href?: string;
   currentPath?: any;
 }) => {
-  console.log(items.path);
   const [hover, setHover] = useState(false);
 
   const navigation = useNavigate();

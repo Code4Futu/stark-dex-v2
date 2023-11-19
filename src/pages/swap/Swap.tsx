@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import {
   ArrowDown,
   ChartIcon,
-  CopyIcon,
   SettingIcon,
   SwapIcon,
 } from "./components/icons";
@@ -21,11 +20,18 @@ import { Transaction } from "./components/Transaction";
 import { Pagination } from "antd";
 import { ChartDesktop } from "./components/Chart";
 import { TransactionDesktop } from "./components/TransactionDesktop";
+import { AddLiquidityButton } from "../../components/buttons/AddLiquidityButton";
+import { ChartDesktopBar } from "../liquidity-swap/components/Chart";
+import useModalChartBar from "../../components/modals/chart-bar-modal/useModalChart";
+import ChartModalBar from "../../components/modals/chart-bar-modal/ModalChartBar";
+import { TransactionDesktopBar } from "../liquidity-swap/components/TransactionDesktop";
+
 export const Swap = () => {
   const [tab, setTab] = useState("swap");
   // Token 0 Input Amount
   const [token0InputAmount, setToken0InputAmount] = useState(0);
 
+  const { isModalCharBarOpen, toggleModalChartBar } = useModalChartBar();
   const { isModalOpen, toggleModalChart } = useModalChart();
   const { isSettingModalOpen, toggleSettingModalChart } =
     useSettingModalChart();
@@ -45,20 +51,22 @@ export const Swap = () => {
   };
 
   return (
-    <div className="flex w-full flex-col gap-6 px-6 py-12 text-white md:items-center">
+    <div className="flex w-full flex-col gap-6 px-6 py-9 text-white md:items-center min-[1920px]:py-[72px]">
       <div className="flex w-full max-w-[1089px] items-end justify-between">
         <span className="text-[32px] font-bold leading-normal text-[#F1F1F1] min-[1920px]:text-[42px]">
           Swap
         </span>
         <div className="min-[1920px]:hidden">
           <div className="button-linear-2 flex items-center justify-center gap-1 rounded-2xl bg-[#F1F1F1] p-3">
-            <ChartIcon onClick={toggleModalChart} />
+            <ChartIcon
+              onClick={tab === "swap" ? toggleModalChart : toggleModalChartBar}
+            />
           </div>
         </div>
       </div>
-      <div className="flex flex-row gap-6">
+      <div className="flex flex-row justify-center gap-6">
         <div className="hidden h-[#514px] w-[722px] flex-col items-start gap-3 rounded-3xl bg-[#1A1C24] p-6 min-[1920px]:flex">
-          <ChartDesktop />
+          {tab === "swap" ? <ChartDesktop /> : <ChartDesktopBar />}
         </div>
         <div className="flex max-w-[342px] flex-col items-end justify-center gap-3 rounded-3xl bg-[#1A1C24] p-6">
           <SwitchButton tab={tab} setTab={setTab} />
@@ -138,35 +146,62 @@ export const Swap = () => {
               </div>
             </div>
             {/* Price */}
-            <div className="flex flex-col items-center gap-1 self-stretch">
-              <div className="flex items-start justify-between self-stretch px-1">
-                <span className="text-sm font-normal text-[#C6C6C6]">
-                  Price
-                </span>
-                <span className="text-sm font-bold text-[#F1F1F1]">
-                  1 SFN = 1 token
-                </span>
+            {tab === "swap" ? (
+              <div className="flex flex-col items-center gap-1 self-stretch">
+                <div className="flex items-start justify-between self-stretch px-1">
+                  <span className="text-sm font-normal text-[#C6C6C6]">
+                    Price
+                  </span>
+                  <span className="text-sm font-bold text-[#F1F1F1]">
+                    1 SFN = 1 token
+                  </span>
+                </div>
+                <div className="flex items-start justify-between self-stretch px-1">
+                  <span className="text-sm font-normal text-[#C6C6C6]">
+                    Minimum received
+                  </span>
+                  <span className="text-sm font-bold text-[#F1F1F1]">
+                    1 token
+                  </span>
+                </div>
+                <div className="flex items-start justify-between self-stretch px-1">
+                  <span className="text-sm font-normal text-[#C6C6C6]">
+                    Price Impact
+                  </span>
+                  <span className="text-sm font-bold text-[#F1F1F1]">0.5%</span>
+                </div>
+                <div className="flex items-start justify-between self-stretch px-1">
+                  <span className="text-sm font-normal text-[#C6C6C6]">
+                    Fee
+                  </span>
+                  <span className="text-sm font-bold text-[#F1F1F1]">0.5%</span>
+                </div>
               </div>
-              <div className="flex items-start justify-between self-stretch px-1">
-                <span className="text-sm font-normal text-[#C6C6C6]">
-                  Minimum received
-                </span>
-                <span className="text-sm font-bold text-[#F1F1F1]">
-                  1 token
-                </span>
+            ) : (
+              <div className="flex flex-col items-center gap-1 self-stretch">
+                <div className="flex items-start justify-between self-stretch px-1">
+                  <span className="text-sm font-normal text-[#C6C6C6]">
+                    SFN per Token
+                  </span>
+                  <span className="text-sm font-bold text-[#F1F1F1]">1</span>
+                </div>
+                <div className="flex items-start justify-between self-stretch px-1">
+                  <span className="text-sm font-normal text-[#C6C6C6]">
+                    Token per SFN
+                  </span>
+                  <span className="text-sm font-bold text-[#F1F1F1]">1</span>
+                </div>
+                <div className="flex items-start justify-between self-stretch px-1">
+                  <span className="text-sm font-normal text-[#C6C6C6]">
+                    Share of pool
+                  </span>
+                  <span className="text-sm font-bold text-[#F1F1F1]">
+                    0.00%
+                  </span>
+                </div>
               </div>
-              <div className="flex items-start justify-between self-stretch px-1">
-                <span className="text-sm font-normal text-[#C6C6C6]">
-                  Price Impact
-                </span>
-                <span className="text-sm font-bold text-[#F1F1F1]">0.5%</span>
-              </div>
-              <div className="flex items-start justify-between self-stretch px-1">
-                <span className="text-sm font-normal text-[#C6C6C6]">Fee</span>
-                <span className="text-sm font-bold text-[#F1F1F1]">0.5%</span>
-              </div>
-            </div>
-            <SwapButton />
+            )}
+            {tab === "swap" ? <SwapButton /> : <AddLiquidityButton />}
           </div>
         </div>
       </div>
@@ -189,17 +224,27 @@ export const Swap = () => {
             </div>
           </div>
           <Divider />
-          <TransactionDesktop />
-          {/* <div className="flex flex-col items-start gap-3 self-stretch">
+          <div className="hidden w-full md:flex">
+            {tab === "swap" ? (
+              <TransactionDesktop />
+            ) : (
+              <TransactionDesktopBar />
+            )}
+          </div>
+          <div className="flex flex-col items-start gap-3 self-stretch md:hidden">
             <Transaction />
             <Transaction />
             <Transaction />
-          </div> */}
+          </div>
         </div>
         <div className="flex w-full items-center justify-center">
           <Pagination defaultCurrent={1} total={1000} />
         </div>
       </div>
+      <ChartModalBar
+        isShowing={isModalCharBarOpen}
+        hide={toggleModalChartBar}
+      />
       <ChartModal isShowing={isModalOpen} hide={toggleModalChart} />
       <SettingChartModal
         isShowing={isSettingModalOpen}

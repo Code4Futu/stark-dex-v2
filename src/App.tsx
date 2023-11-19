@@ -42,11 +42,7 @@ function App() {
           resizeDrawer={resizeDrawer}
           content={content}
         />
-        <div
-          className={
-            currentPath !== "/" ? `flex bg-transparent xl:mt-[169px]` : ""
-          }
-        >
+        <div className={currentPath !== "/" ? `flex bg-transparent` : ""}>
           <Drawer
             openDrawer={openDrawer}
             toggle={changeContent}
@@ -60,7 +56,7 @@ function App() {
               resizeDrawer
                 ? "min-[1920px]:pl-[104px]"
                 : "min-[1920px]:pl-[288px]",
-              currentPath !== "/" && "mt-[134px]"
+              currentPath !== "/" && "mt-[144px]"
             )}
           >
             <Routes>

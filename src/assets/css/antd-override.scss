@@ -36,6 +36,12 @@
   background: transparent;
 }
 
+.ant-input::placeholder {
+  font-size: 16px !important;
+  color: #3c3d4d !important;
+  font-weight: 400 !important;
+}
+
 input,
 select,
 textarea {

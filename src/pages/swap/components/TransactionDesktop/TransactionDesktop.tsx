@@ -16,7 +16,7 @@ export const TransactionDesktop = () => {
       </div>
       <Divider className="my-3" />
       {transactionMockup.map((item, idx) => (
-        <TransactionRow idx={idx} />
+        <TransactionRow key={idx} idx={idx} />
       ))}
     </div>
   );
