@@ -4,7 +4,7 @@ import { DefaultButton } from "../../liquidity/components/DefaultButton";
 
 export const RemoveLiquidity = () => {
   return (
-    <div className="flex flex-col items-start gap-3 rounded-3xl bg-[#1A1C24] p-6">
+    <div className="flex w-full flex-col items-start gap-3 rounded-3xl bg-[#1A1C24] p-6">
       <div className="flex flex-col items-start gap-1">
         <span className="text-xl font-bold text-[#f1f1f1]">
           Remove SFN/ETH liquidity

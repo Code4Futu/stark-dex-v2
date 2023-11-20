@@ -1,4 +1,4 @@
-import { PoolInfomation, RemoveLiquidity } from "./components";
+import { PoolInfomation, Receive, RemoveLiquidity } from "./components";
 import { ArrowBack } from "./icons";
 
 export const YourLiquidityRemove = () => {
@@ -9,7 +9,14 @@ export const YourLiquidityRemove = () => {
         <span className="text-[32px] font-bold text-[#f1f1f1]">Remove</span>
       </div>
       <PoolInfomation />
-      <RemoveLiquidity />
+      <div className="flex flex-col gap-6 md:hidden">
+        <RemoveLiquidity />
+        <Receive />
+      </div>
+      <div className="hidden w-full max-w-[1088px] gap-6 md:flex">
+        <RemoveLiquidity />
+        <Receive />
+      </div>
     </div>
   );
 };
