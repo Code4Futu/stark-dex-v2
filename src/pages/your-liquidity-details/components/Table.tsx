@@ -1,0 +1,28 @@
+import { Divider } from "../../../components/Divider";
+import { TransactionDesktop } from ".";
+import { Transaction } from ".";
+import { Pagination } from "antd";
+
+export const Table = () => {
+  return (
+    <div className="flex w-full max-w-[1089px] flex-col items-start gap-3 rounded-3xl bg-[#1A1C24] p-6">
+      <div className="flex flex-col items-start gap-3 self-stretch">
+        <div className="flex items-end justify-between self-stretch">
+          <span className="text-xl font-bold text-[#F1F1F1]">History</span>
+        </div>
+        <Divider />
+        <div className="hidden w-full md:flex">
+          <TransactionDesktop />
+        </div>
+        <div className="flex flex-col items-start gap-3 self-stretch md:hidden">
+          <Transaction />
+          <Transaction />
+          <Transaction />
+        </div>
+      </div>
+      <div className="flex w-full items-center justify-center">
+        <Pagination defaultCurrent={1} total={1000} />
+      </div>
+    </div>
+  );
+};

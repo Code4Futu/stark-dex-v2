@@ -122,3 +122,17 @@ input::placeholder {
 .ant-pagination-options {
   display: none !important;
 }
+
+.ant-slider-rail {
+  height: 6px !important;
+  border: 1px solid #2d313e;
+}
+
+.ant-slider-track {
+  background-color: #24c3bc !important;
+}
+
+.ant-slider-handle::after {
+  background-color: #24c3bc !important;
+  box-shadow: 0 0 0 2px #24c3bc !important;
+}

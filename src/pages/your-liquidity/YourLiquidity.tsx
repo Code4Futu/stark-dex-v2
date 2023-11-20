@@ -4,7 +4,6 @@ import { DonaInput } from "../../components/StarkInput";
 import { DefaultButton } from "./components/DefaultButton";
 import { TransactionDesktop } from "./components/TransactionDesktop";
 import { TransactionMobile } from "./components/TransactionMobile";
-import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { useNavigate } from "react-router-dom";
 
@@ -19,12 +18,12 @@ const HeaderMobile = () => {
         <DefaultButton
           title="All Pool"
           onClick={() => navigation("/liquidity")}
+          className="bg-[#2D313E]"
+          textStyle="text-[#f1f1f1]"
         />
         <DefaultButton
           onClick={() => navigation("/your-liquidity")}
           title="My Pools"
-          className="bg-[#2D313E]"
-          textStyle="text-[#f1f1f1]"
         />
       </div>
     </div>
@@ -42,20 +41,20 @@ const HeaderDesktop = () => {
         <DefaultButton
           onClick={() => navigation("/liquidity")}
           title="All Pool"
-          className="w-[104px]"
+          className="w-[104px] bg-[#2D313E]"
+          textStyle="text-[#f1f1f1]"
         />
         <DefaultButton
           onClick={() => navigation("/your-liquidity")}
-          className="w-[114px] bg-[#2D313E]"
+          className="w-[114px]"
           title="My Pools"
-          textStyle="text-[#f1f1f1]"
         />
       </div>
     </div>
   );
 };
 
-export const Liquidity = () => {
+export const YourLiquidity = () => {
   return (
     <div className="flex w-full flex-col gap-6 px-6 py-9 text-white md:items-center min-[1920px]:py-[72px]">
       <div className="flex w-full max-w-[1088px] flex-col items-start gap-3">
