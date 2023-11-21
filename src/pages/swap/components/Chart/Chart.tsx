@@ -2,6 +2,7 @@ import icons from "../../../../assets/icons";
 import { Divider } from "../../../../components/Divider";
 import { SwapIcon } from "../icons";
 import { Chart } from "../../../../components/modals/chart-modal/components/Chart";
+import { ExampleChart } from "./ExampleChart";
 
 export const ChartDesktop = () => {
   return (
@@ -55,7 +56,8 @@ export const ChartDesktop = () => {
           </div>
         </div>
       </div>
-      <Chart />
+      {/* <Chart /> */}
+      <ExampleChart />
     </>
   );
 };

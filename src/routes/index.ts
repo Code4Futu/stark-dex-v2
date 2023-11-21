@@ -7,6 +7,7 @@ import {
   YourLiquidity,
   YourLiquidityDetail,
   YourLiquidityRemove,
+  SwapOverview,
 } from "../pages";
 import route from "./route";
 
@@ -18,6 +19,7 @@ const publicRoutesMobile = [
   { path: route.yourLiquidity, element: YourLiquidity },
   { path: route.yourLiquidityDetails, element: YourLiquidityDetail },
   { path: route.yourLiquidityRemove, element: YourLiquidityRemove },
+  { path: route.swapOverview, element: SwapOverview },
   { path: "*", element: ComingSoonPage },
 ];
 
