@@ -1,6 +1,6 @@
 import icons from "../../../../assets/icons";
 import { Divider } from "../../../../components/Divider";
-import { Chart } from "../../../../components/modals/chart-bar-modal/components/Chart";
+import { ChartBar } from "../../../../components/modals/chart-bar-modal/components/Chart";
 import { SwapIcon } from "../icons";
 
 export const ChartDesktopBar = () => {
@@ -55,7 +55,7 @@ export const ChartDesktopBar = () => {
           </div>
         </div>
       </div>
-      <Chart />
+      <ChartBar />
     </>
   );
 };

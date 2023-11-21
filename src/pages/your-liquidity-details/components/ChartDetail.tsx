@@ -1,5 +1,5 @@
 import { Divider } from "../../../components/Divider";
-import { Chart } from "../../../components/modals/chart-bar-modal/components/Chart";
+import { ChartBar } from "../../../components/modals/chart-bar-modal/components/Chart";
 
 export const ChartDetail = () => {
   return (
@@ -58,7 +58,7 @@ export const ChartDetail = () => {
           </div>
         </div>
       </div>
-      <Chart />
+      <ChartBar />
     </div>
   );
 };

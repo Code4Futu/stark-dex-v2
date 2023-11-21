@@ -1,57 +1,51 @@
-import React from "react";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import { Line } from "react-chartjs-2";
-import faker from "faker";
+import { Area, AreaChart, XAxis, YAxis } from "recharts";
+import DUMMY_DATA from "../../../../dummy-data-chart";
+import { useState, useEffect } from "react";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
+export const LineChart = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "top" as const,
-    },
-  },
-};
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
 
-const labels = ["17:00", "21:00", "01:00", "05:00", "09:00", "13:00", "17:00"];
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
-      borderColor: "#24C3BC",
-      backgroundColor: "#24C3BC",
-      pointStyle: "false",
-      // pointStyle: false -> not working?
-    },
-  ],
-};
-
-export const Chart = () => {
   return (
-    <Line
-      className="!h-[342px] !text-white md:!h-auto"
-      options={options}
-      data={data}
-    />
+    <AreaChart
+      width={windowSize.width > 1920 ? 674 : windowSize.width - 48}
+      height={300}
+      data={DUMMY_DATA.data}
+    >
+      <defs>
+        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="5%" stopColor="#24C3BC" stopOpacity={0.2} />
+          <stop offset="95%" stopColor="#24C3BC" stopOpacity={0} />
+        </linearGradient>
+      </defs>
+      <XAxis dataKey="name" axisLine={false} tickLine={false} />
+      <YAxis
+        dataKey="uv"
+        axisLine={false}
+        tickLine={false}
+        orientation="right"
+      />
+      <Area
+        type="monotone"
+        dataKey="uv"
+        stroke="#24C3BC"
+        fillOpacity={1}
+        fill="url(#colorUv)"
+      />
+    </AreaChart>
   );
 };

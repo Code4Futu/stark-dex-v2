@@ -59,7 +59,7 @@ const data = [
 export const ChartBar = () => {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart width={150} height={40} data={data} barCategoryGap={0}>
+      <BarChart width={150} height={380} data={data} barCategoryGap={0}>
         <Bar dataKey="uv" fill="#24C3BC" />
         <Bar dataKey="pv" fill="#24C3BC" />
         <Bar dataKey="amt" fill="#24C3BC" />

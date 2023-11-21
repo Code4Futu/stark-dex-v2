@@ -7,6 +7,7 @@ import { YourLiquidity } from "./your-liquidity";
 import { YourLiquidityDetail } from "./your-liquidity-details";
 import { YourLiquidityRemove } from "./your-liquidity-remove/YourLiquidityRemove";
 import { SwapOverview } from "./swap-overview/SwapOverview";
+import { Overview } from "./overview";
 // import LaunchpadListPage from "./launchpad-list";
 
 export {
@@ -19,4 +20,5 @@ export {
   YourLiquidityDetail,
   YourLiquidityRemove,
   SwapOverview,
+  Overview,
 };

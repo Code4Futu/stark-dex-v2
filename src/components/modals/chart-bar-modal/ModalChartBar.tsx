@@ -2,7 +2,7 @@ import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { ModalHeader } from "./components/ModalHeader";
 import { Divider } from "../../Divider";
-import { Chart } from "./components/Chart";
+import { ChartBar } from "./components/Chart";
 import "./style.scss";
 
 const ChartModalBar = ({
@@ -70,7 +70,7 @@ const ChartModalBar = ({
                 </div>
               </div>
             </div>
-            <Chart />
+            <ChartBar />
           </div>
         </div>
       )}

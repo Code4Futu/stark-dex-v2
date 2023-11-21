@@ -36,7 +36,7 @@ export const LiquidityDetail = () => {
         </div>
       </div>
       <PoolInfomation />
-      <div className="flex w-full flex-col gap-6 min-[1920px]:hidden">
+      <div className="flex w-full max-w-[1088px] flex-col gap-6 min-[1920px]:hidden">
         <div className="flex w-full flex-col gap-6 md:hidden">
           <PoolLiquidity />
           <PoolStatistics />

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
-import icons from "../../../assets/icons";
 import { ModalHeader } from "./components/ModalHeader";
 import { Divider } from "../../Divider";
-import { Chart } from "./components/Chart";
+import { LineChart } from "./components/Chart";
 import "./style.scss";
 
 const ChartModal = ({
@@ -71,7 +70,7 @@ const ChartModal = ({
                 </div>
               </div>
             </div>
-            <Chart />
+            <LineChart />
           </div>
         </div>
       )}

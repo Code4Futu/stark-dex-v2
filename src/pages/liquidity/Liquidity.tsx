@@ -4,8 +4,6 @@ import { DonaInput } from "../../components/StarkInput";
 import { DefaultButton } from "./components/DefaultButton";
 import { TransactionDesktop } from "./components/TransactionDesktop";
 import { TransactionMobile } from "./components/TransactionMobile";
-import { useState } from "react";
-import { twMerge } from "tailwind-merge";
 import { useNavigate } from "react-router-dom";
 
 const HeaderMobile = () => {
@@ -66,7 +64,7 @@ export const Liquidity = () => {
           <HeaderDesktop />
           <div className="hidden min-[1920px]:flex">
             <DonaInput
-              className="w-[303px] rounded-2xl border-[1px] !border-[#2D313E] !bg-[#0D0E12]"
+              className="!h-12 w-[303px] rounded-2xl border-[1px] !border-[#2D313E] !bg-[#0D0E12]"
               placeholder="Search name..."
             />
           </div>

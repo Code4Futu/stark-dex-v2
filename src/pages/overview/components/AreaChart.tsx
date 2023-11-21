@@ -1,8 +1,8 @@
 import { Area, AreaChart, XAxis, YAxis } from "recharts";
-import DUMMY_DATA from "../../../../dummy-data-chart";
+import DUMMY_DATA from "../../../dummy-data-chart";
 import { useState, useEffect } from "react";
 
-export const ExampleChart = () => {
+export const LineChart = () => {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -22,8 +22,8 @@ export const ExampleChart = () => {
 
   return (
     <AreaChart
-      width={windowSize.width > 600 ? 674 : windowSize.width - 80}
-      height={300}
+      width={windowSize.width > 1920 ? 674 : windowSize.width - 48}
+      height={227}
       data={DUMMY_DATA.data}
     >
       <defs>
@@ -33,13 +33,6 @@ export const ExampleChart = () => {
         </linearGradient>
       </defs>
       <XAxis dataKey="name" axisLine={false} tickLine={false} />
-      <YAxis
-        dataKey="uv"
-        axisLine={false}
-        tickLine={false}
-        orientation="right"
-      />
-      {/* <Tooltip content={<CustomTooltip />} /> */}
       <Area
         type="monotone"
         dataKey="uv"
