@@ -9,6 +9,8 @@ import {
   YourLiquidityRemove,
   SwapOverview,
   Overview,
+  OverviewToken,
+  OverviewPair,
 } from "../pages";
 import route from "./route";
 
@@ -22,6 +24,8 @@ const publicRoutesMobile = [
   { path: route.yourLiquidityRemove, element: YourLiquidityRemove },
   { path: route.swapOverview, element: SwapOverview },
   { path: route.overview, element: Overview },
+  { path: route.overviewToken, element: OverviewToken },
+  { path: route.overviewPair, element: OverviewPair },
   { path: "*", element: ComingSoonPage },
 ];
 

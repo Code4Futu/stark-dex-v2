@@ -1,15 +1,4 @@
-import React, { PureComponent } from "react";
-import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import { BarChart, Bar, XAxis, ResponsiveContainer } from "recharts";
 
 const data = [
   {
@@ -56,15 +45,10 @@ const data = [
   },
 ];
 
-export const ChartBar = ({ chartHeight }: { chartHeight?: number }) => {
+export const ChartBarDesktop = ({ chartHeight }: { chartHeight?: number }) => {
   return (
     <ResponsiveContainer width="100%">
-      <BarChart
-        width={150}
-        height={chartHeight ? chartHeight : 380}
-        data={data}
-        barCategoryGap={0}
-      >
+      <BarChart width={150} height={227} data={data} barCategoryGap={0}>
         <Bar dataKey="uv" fill="#24C3BC" />
         <Bar dataKey="pv" fill="#24C3BC" />
         <Bar dataKey="amt" fill="#24C3BC" />

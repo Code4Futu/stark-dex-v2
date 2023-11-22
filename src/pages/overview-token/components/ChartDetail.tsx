@@ -1,19 +1,13 @@
-import { twMerge } from "tailwind-merge";
 import { Divider } from "../../../components/Divider";
-import { ChartBar } from "./Chart";
-export const ChartDetail = ({ className }: { className?: string }) => {
+import { LineChart } from "./Chart";
+export const ChartDetail = () => {
   return (
-    <div
-      className={twMerge(
-        "flex h-[593px] w-full max-w-[1088px] flex-col items-start gap-3 rounded-3xl bg-[#1A1C24] p-6 md:h-[573px] min-[1920px]:max-w-[722px]",
-        className
-      )}
-    >
+    <div className="flex h-[593px] w-full max-w-[1088px] flex-col items-start gap-3 rounded-3xl bg-[#1A1C24] p-6 md:h-[573px] min-[1920px]:max-w-[722px]">
       <span className="self-stretch text-xl font-bold text-[#f1f1f1]">
         Volume
       </span>
       <Divider />
-      <div className="flex w-full flex-col gap-3 md:hidden">
+      <div className="flex flex-col gap-3 md:hidden">
         <div className="flex flex-col items-start gap-1">
           <span className="text-xl font-bold text-[#f1f1f1]">$686.86k</span>
           <span className="text-xs font-medium text-[#c6c6c6]">
@@ -37,9 +31,8 @@ export const ChartDetail = ({ className }: { className?: string }) => {
             <span className="text-xs font-medium text-[#f1f1f1]">ALL</span>
           </div>
         </div>
-        <ChartBar />
       </div>
-      <div className="hidden w-full justify-between justify-between gap-3 md:flex">
+      <div className="hidden w-full justify-between gap-3 md:flex">
         <div className="flex flex-col items-start gap-1">
           <span className="text-xl font-bold text-[#f1f1f1]">$686.86k</span>
           <span className="text-xs font-medium text-[#c6c6c6]">
@@ -64,7 +57,7 @@ export const ChartDetail = ({ className }: { className?: string }) => {
           </div>
         </div>
       </div>
-      <ChartBar />
+      <LineChart />
     </div>
   );
 };

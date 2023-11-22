@@ -8,6 +8,8 @@ const route = {
   yourLiquidityDetails: "/your-liquidity/details",
   yourLiquidityRemove: "/your-liquidity/remove",
   overview: "overview",
+  overviewToken: "/overview/token",
+  overviewPair: "/overview/pair",
   comingSoon: "coming-soon",
 };
 

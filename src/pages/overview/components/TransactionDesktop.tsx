@@ -8,7 +8,7 @@ const Transaction = () => {
   return (
     <div
       className="flex flex-col gap-3"
-      onClick={() => navigation("/liquidity/details")}
+      onClick={() => navigation("/overview/pair")}
     >
       <div className="flex w-full items-center justify-between self-stretch">
         <div className="flex w-[250px] items-center gap-3">

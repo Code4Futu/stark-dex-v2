@@ -2,7 +2,7 @@ import { Divider } from "../../../components/Divider";
 
 export const SfnInformation = () => {
   return (
-    <div className="flex w-full flex-col items-start gap-3 rounded-3xl bg-[#1A1C24] p-6 min-[1920px]:min-w-[342px]">
+    <div className="flex w-full max-w-[1088px] flex-col items-start gap-3 rounded-3xl bg-[#1A1C24] p-6 min-[1920px]:min-w-[342px]">
       <span className="self-stretch text-xl font-bold text-[#f1f1f1]">
         Pool statistics
       </span>

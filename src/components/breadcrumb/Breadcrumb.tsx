@@ -61,6 +61,43 @@ export const BreadCrumb = () => {
           <Breadcrumb.Item>SFN/ETH</Breadcrumb.Item>
         </>
       )}
+      {currentPath === "/overview" && (
+        <>
+          <Breadcrumb.Item>
+            <ExchangeIcon width="24" height="24" />
+            <span>Exchange</span>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item href="/overview">Overview</Breadcrumb.Item>
+        </>
+      )}
+      {currentPath === "/overview/token" && (
+        <>
+          <Breadcrumb.Item>
+            <ExchangeIcon width="24" height="24" />
+            <span>Exchange</span>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item href="/overview">
+            <span className="text-base font-normal text-[#c6c6c6]">
+              Overview
+            </span>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item href="/overview/token">Token</Breadcrumb.Item>
+        </>
+      )}
+      {currentPath === "/overview/pair" && (
+        <>
+          <Breadcrumb.Item>
+            <ExchangeIcon width="24" height="24" />
+            <span>Exchange</span>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item href="/overview">
+            <span className="text-base font-normal text-[#c6c6c6]">
+              Overview
+            </span>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item href="/overview/pair">Pair</Breadcrumb.Item>
+        </>
+      )}
     </Breadcrumb>
   );
 };

@@ -7,7 +7,7 @@ export const Transaction = () => {
   return (
     <div
       className="flex w-full flex-col gap-3"
-      onClick={() => navigation("/liquidity/details")}
+      onClick={() => navigation("/overview/pair")}
     >
       <div className="flex w-full flex-col items-start gap-3 self-stretch">
         <div className="flex items-center gap-3">

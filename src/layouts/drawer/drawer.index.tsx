@@ -26,11 +26,11 @@ export const DrawerData = [
       },
       {
         title: "Liquidity",
-        path: route.home,
+        path: route.liquidity,
       },
       {
         title: "Overview",
-        path: route.home,
+        path: route.overview,
       },
     ],
   },
@@ -150,7 +150,6 @@ const DrawerMobile = (props: any) => {
   const [socicalData, setSocicalData] = useState<any[]>(SocialData);
 
   const handleDrawerClick = (id: number) => {
-    console.log(id);
     if (props.resizeDrawer) return;
     const tempDrawerData = drawerData.map((item) => {
       if (item.id == id) {

@@ -2,8 +2,10 @@ import { Pagination } from "antd";
 import icons from "../../../assets/icons";
 import { Divider } from "../../../components/Divider";
 import { ArrangeIcon } from "../../liquidity/icons";
+import { useNavigate } from "react-router-dom";
 
 const TopTokenMobile = () => {
+  const navigation = useNavigate();
   return (
     <div className="flex w-full flex-col items-start gap-3 rounded-3xl bg-[#1A1C24] p-6">
       <div className="flex items-center justify-between self-stretch">
@@ -29,7 +31,10 @@ const TopTokenMobile = () => {
         </div>
       </div>
       <Divider />
-      <div className="flex flex-col items-start gap-3 self-stretch">
+      <div
+        className="flex flex-col items-start gap-3 self-stretch"
+        onClick={() => navigation("/overview/token")}
+      >
         <div className="flex items-center gap-3 rounded-[36px] border-[1px] border-[#2D313E] px-4 py-2">
           <img
             src={icons.v2.logo_noname}
@@ -59,7 +64,10 @@ const TopTokenMobile = () => {
         </div>
       </div>
       <Divider />
-      <div className="flex flex-col items-start gap-3 self-stretch">
+      <div
+        className="flex flex-col items-start gap-3 self-stretch"
+        onClick={() => navigation("/overview/token")}
+      >
         <div className="flex items-center gap-3 rounded-[36px] border-[1px] border-[#2D313E] px-4 py-2">
           <img
             src={icons.v2.logo_noname}
@@ -89,7 +97,10 @@ const TopTokenMobile = () => {
         </div>
       </div>
       <Divider />
-      <div className="flex flex-col items-start gap-3 self-stretch">
+      <div
+        className="flex flex-col items-start gap-3 self-stretch"
+        onClick={() => navigation("/overview/token")}
+      >
         <div className="flex items-center gap-3 rounded-[36px] border-[1px] border-[#2D313E] px-4 py-2">
           <img
             src={icons.v2.logo_noname}
@@ -127,6 +138,7 @@ const TopTokenMobile = () => {
 };
 
 const TopTokenDesktop = () => {
+  const navigation = useNavigate();
   return (
     <div className="flex w-full flex-col items-start gap-3 rounded-3xl bg-[#1A1C24] p-6">
       <div className="flex items-center justify-between self-stretch">
@@ -155,7 +167,10 @@ const TopTokenDesktop = () => {
         </div>
       </div>
       <Divider />
-      <div className="flex items-center justify-between self-stretch py-3">
+      <div
+        className="flex items-center justify-between self-stretch py-3"
+        onClick={() => navigation("/overview/token")}
+      >
         <div className="flex w-[220px]">
           <div className="flex items-center gap-3 rounded-[36px] border-[1px] border-[#2D313E] px-4 py-2">
             <img
@@ -183,7 +198,10 @@ const TopTokenDesktop = () => {
         </span>
       </div>
       <Divider />
-      <div className="flex items-center justify-between self-stretch py-3">
+      <div
+        className="flex items-center justify-between self-stretch py-3"
+        onClick={() => navigation("/overview/token")}
+      >
         <div className="flex w-[220px]">
           <div className="flex items-center gap-3 rounded-[36px] border-[1px] border-[#2D313E] px-4 py-2">
             <img
@@ -211,7 +229,10 @@ const TopTokenDesktop = () => {
         </span>
       </div>
       <Divider />
-      <div className="flex items-center justify-between self-stretch py-3">
+      <div
+        className="flex items-center justify-between self-stretch py-3"
+        onClick={() => navigation("/overview/token")}
+      >
         <div className="flex w-[220px]">
           <div className="flex items-center gap-3 rounded-[36px] border-[1px] border-[#2D313E] px-4 py-2">
             <img
@@ -248,7 +269,7 @@ const TopTokenDesktop = () => {
 
 export const TopToken = () => {
   return (
-    <div className="flex w-full">
+    <div className="flex w-full max-w-[1088px]">
       <div className="w-full md:hidden">
         <TopTokenMobile />
       </div>
